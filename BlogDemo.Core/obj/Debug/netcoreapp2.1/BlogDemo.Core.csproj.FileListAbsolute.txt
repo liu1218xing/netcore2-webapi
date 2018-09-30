@@ -1,0 +1,9 @@
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.deps.json
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.dll
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csprojAssemblyReference.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csproj.CoreCompileInputs.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfoInputs.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfo.cs
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.dll
+G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.pdb
