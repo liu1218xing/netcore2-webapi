@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using BlogDemo.Infrastructure.DataBase;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
 
 namespace BlogDemo.Api
 {
@@ -17,6 +15,16 @@ namespace BlogDemo.Api
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .WriteTo.File(Path.Combine("logs", @"log.txt"), rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
+            Log.Information("Hello, world!");
+
             var host = CreateWebHostBuilder(args).Build();
             using(var scope = host.Services.CreateScope())
             {
@@ -38,7 +46,8 @@ namespace BlogDemo.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseStartup(typeof(StartupDevelopment).GetTypeInfo().Assembly.FullName);
+            .UseStartup(typeof(StartupDevelopment).GetTypeInfo().Assembly.FullName)
+            .UseSerilog();
                 //.UseStartup<Startup>();
     }
 }
