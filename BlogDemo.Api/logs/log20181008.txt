@@ -1,0 +1,748 @@
+2018-10-08 11:29:39.384 +08:00 [INF] Hello, world!
+2018-10-08 11:30:03.546 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:31.500 +08:00 [INF] Hello, world!
+2018-10-08 11:30:37.732 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:38.826 +08:00 [INF] Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 11:30:39.129 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 11:30:40.979 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 11:30:40.979 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 11:30:40.976 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/favicon.ico  
+2018-10-08 11:30:41.371 +08:00 [INF] Request finished in 397.1559ms 404 
+2018-10-08 11:30:41.434 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:30:41.434 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:30:41.468 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 11:30:41.468 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 11:30:41.525 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:41.525 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:41.896 +08:00 [INF] Executed DbCommand (182ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 11:30:41.914 +08:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 11:30:42.088 +08:00 [ERR] Get All Posts...
+2018-10-08 11:30:42.088 +08:00 [ERR] Get All Posts...
+2018-10-08 11:30:42.212 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 736.0873ms.
+2018-10-08 11:30:42.213 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 735.722ms.
+2018-10-08 11:30:42.265 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 11:30:42.265 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 11:30:42.515 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1042.6428ms
+2018-10-08 11:30:42.515 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1039.5842ms
+2018-10-08 11:30:42.538 +08:00 [INF] Request finished in 1563.7179ms 200 application/json; charset=utf-8
+2018-10-08 11:30:42.538 +08:00 [INF] Request finished in 1558.5385ms 200 application/json; charset=utf-8
+2018-10-08 11:30:42.804 +08:00 [WRN] Connection processing ended abnormally.
+Microsoft.AspNetCore.Connections.ConnectionAbortedException: The connection was aborted
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2018-10-08 11:30:46.032 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/2  
+2018-10-08 11:30:46.074 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:30:46.144 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["2"]) - Validation state: "Valid"
+2018-10-08 11:30:46.220 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:46.420 +08:00 [INF] Executed DbCommand (110ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:30:46.484 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 324.8995ms.
+2018-10-08 11:30:46.485 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostResource'.
+2018-10-08 11:30:46.485 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 411.3244ms
+2018-10-08 11:30:46.485 +08:00 [INF] Request finished in 453.6552ms 200 application/json; charset=utf-8
+2018-10-08 11:30:51.333 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:30:51.334 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:30:51.336 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:30:51.337 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:51.348 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:30:51.354 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 15.3232ms.
+2018-10-08 11:30:51.365 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:30:51.369 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 33.8249ms
+2018-10-08 11:30:51.370 +08:00 [INF] Request finished in 36.1011ms 404 
+2018-10-08 11:30:54.206 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:30:54.206 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:30:54.208 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:30:54.211 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:30:54.222 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:30:54.222 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 11.6716ms.
+2018-10-08 11:30:54.222 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:30:54.222 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 16.239900000000002ms
+2018-10-08 11:30:54.223 +08:00 [INF] Request finished in 16.9215ms 404 
+2018-10-08 11:30:58.353 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 11:30:58.363 +08:00 [INF] Request finished in 10.1783ms 404 
+2018-10-08 11:31:07.149 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:31:07.149 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:31:07.149 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:31:07.150 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:31:07.155 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:31:07.156 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 6.3075ms.
+2018-10-08 11:31:07.156 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:31:07.156 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 7.1099000000000006ms
+2018-10-08 11:31:07.157 +08:00 [INF] Request finished in 8.4586ms 404 
+2018-10-08 11:31:08.288 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:31:08.288 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:31:08.288 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:31:08.289 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:31:08.302 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:31:08.302 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 13.6423ms.
+2018-10-08 11:31:08.302 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:31:08.303 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 14.4573ms
+2018-10-08 11:31:08.303 +08:00 [INF] Request finished in 15.0493ms 404 
+2018-10-08 11:31:10.542 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:31:10.546 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:31:10.548 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:31:10.549 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:31:10.555 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:31:10.555 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 6.4054ms.
+2018-10-08 11:31:10.555 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:31:10.556 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 8.4754ms
+2018-10-08 11:31:10.556 +08:00 [INF] Request finished in 13.8517ms 404 
+2018-10-08 11:31:11.565 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts/200  
+2018-10-08 11:31:11.566 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:31:11.567 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["200"]) - Validation state: "Valid"
+2018-10-08 11:31:11.568 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:31:11.590 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-08 11:31:11.594 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 27.5729ms.
+2018-10-08 11:31:11.595 +08:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-10-08 11:31:11.595 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 28.437800000000003ms
+2018-10-08 11:31:11.595 +08:00 [INF] Request finished in 29.9345ms 404 
+2018-10-08 11:31:57.195 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 11:31:57.196 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:31:57.196 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 11:31:57.197 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:31:57.199 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 11:31:57.200 +08:00 [ERR] Get All Posts...
+2018-10-08 11:31:57.200 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.8054ms.
+2018-10-08 11:31:57.200 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 11:31:57.201 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 4.8864ms
+2018-10-08 11:31:57.201 +08:00 [INF] Request finished in 5.547ms 200 application/json; charset=utf-8
+2018-10-08 11:32:21.053 +08:00 [INF] Hello, world!
+2018-10-08 11:32:23.497 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:32:23.812 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 11:32:23.901 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 11:32:24.414 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 11:32:24.414 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 11:32:24.542 +08:00 [INF] Request finished in 129.1032ms 404 
+2018-10-08 11:32:24.588 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 11:32:24.621 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 11:32:24.637 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 11:32:24.767 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 11:32:24.868 +08:00 [ERR] Get All Posts...
+2018-10-08 11:32:24.948 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 353.5016ms
+2018-10-08 11:32:24.954 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error!!!!!
+   at BlogDemo.Api.Controllers.PostController.Get() in G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Api\Controllers\PostController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2018-10-08 11:32:25.077 +08:00 [ERR] Error!!!!!
+System.Exception: Error!!!!!
+   at BlogDemo.Api.Controllers.PostController.Get() in G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Api\Controllers\PostController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2018-10-08 11:32:25.096 +08:00 [INF] Request finished in 683.1234ms 500 application/json
+2018-10-08 13:59:12.036 +08:00 [INF] Hello, world!
+2018-10-08 13:59:21.774 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 13:59:23.635 +08:00 [INF] Executed DbCommand (231ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 13:59:24.160 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 13:59:25.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 13:59:25.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 13:59:25.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 13:59:25.884 +08:00 [INF] Request finished in 171.071ms 404 
+2018-10-08 13:59:25.922 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 13:59:25.922 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 13:59:25.949 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 13:59:25.949 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 13:59:25.959 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 13:59:25.959 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 13:59:26.109 +08:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 13:59:26.132 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 13:59:26.220 +08:00 [ERR] Get All Posts...
+2018-10-08 13:59:26.220 +08:00 [ERR] Get All Posts...
+2018-10-08 13:59:26.285 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 331.05400000000003ms.
+2018-10-08 13:59:26.286 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 331.0208ms.
+2018-10-08 13:59:26.317 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 13:59:26.317 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 13:59:26.599 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 671.32850000000008ms
+2018-10-08 13:59:26.599 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 671.3532ms
+2018-10-08 13:59:26.614 +08:00 [INF] Request finished in 901.5263ms 200 application/json; charset=utf-8
+2018-10-08 13:59:26.614 +08:00 [INF] Request finished in 901.518ms 200 application/json; charset=utf-8
+2018-10-08 13:59:51.581 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 13:59:51.590 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 13:59:51.591 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 13:59:51.592 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 13:59:51.594 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 13:59:51.595 +08:00 [ERR] Get All Posts...
+2018-10-08 13:59:51.596 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.3937ms.
+2018-10-08 13:59:51.597 +08:00 [WRN] No output formatter was found for content type 'application/xml' to write the response.
+2018-10-08 13:59:51.598 +08:00 [WRN] No output formatter was found for content type 'application/xml' to write the response.
+2018-10-08 13:59:51.599 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 8.2104ms
+2018-10-08 13:59:51.599 +08:00 [INF] Request finished in 17.7585ms 406 
+2018-10-08 14:03:20.496 +08:00 [INF] Hello, world!
+2018-10-08 14:03:36.472 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:03:39.001 +08:00 [INF] Executed DbCommand (648ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 14:03:39.258 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 14:03:40.192 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:03:40.192 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 14:03:40.346 +08:00 [INF] Request finished in 154.6556ms 404 
+2018-10-08 14:03:40.386 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:03:40.408 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:03:40.419 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:03:40.746 +08:00 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:03:41.395 +08:00 [ERR] Get All Posts...
+2018-10-08 14:03:41.753 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1327.9268ms.
+2018-10-08 14:03:42.236 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:03:42.280 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1887.3895ms
+2018-10-08 14:03:42.299 +08:00 [INF] Request finished in 2108.4872ms 200 application/xml; charset=utf-8
+2018-10-08 14:04:32.301 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:32.307 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:32.308 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:32.309 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:32.320 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:32.321 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:32.323 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.2781ms.
+2018-10-08 14:04:32.324 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:32.325 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 17.2486ms
+2018-10-08 14:04:32.325 +08:00 [INF] Request finished in 24.4308ms 200 application/xml; charset=utf-8
+2018-10-08 14:04:34.018 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:34.018 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:34.019 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:34.019 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:34.027 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:34.028 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:34.028 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.6324ms.
+2018-10-08 14:04:34.029 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:34.030 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 11.2536ms
+2018-10-08 14:04:34.031 +08:00 [INF] Request finished in 13.6395ms 200 application/xml; charset=utf-8
+2018-10-08 14:04:35.446 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:35.447 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:35.447 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:35.447 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:35.478 +08:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:35.479 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:35.479 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 31.847700000000003ms.
+2018-10-08 14:04:35.479 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:35.480 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 32.6184ms
+2018-10-08 14:04:35.480 +08:00 [INF] Request finished in 34.0661ms 200 application/xml; charset=utf-8
+2018-10-08 14:04:45.902 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:45.903 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:45.903 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:45.904 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:45.906 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:45.907 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:45.907 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.1997ms.
+2018-10-08 14:04:45.908 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:46.012 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 108.9705ms
+2018-10-08 14:04:46.012 +08:00 [INF] Request finished in 109.89ms 200 application/json; charset=utf-8
+2018-10-08 14:04:47.393 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:47.394 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:47.394 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:47.395 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:47.403 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:47.404 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:47.404 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.720600000000001ms.
+2018-10-08 14:04:47.405 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:47.405 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 11.0768ms
+2018-10-08 14:04:47.405 +08:00 [INF] Request finished in 12.0141ms 200 application/json; charset=utf-8
+2018-10-08 14:04:48.455 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts  
+2018-10-08 14:04:48.455 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:04:48.455 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-08 14:04:48.456 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:04:48.463 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+2018-10-08 14:04:48.464 +08:00 [ERR] Get All Posts...
+2018-10-08 14:04:48.464 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.8291ms.
+2018-10-08 14:04:48.464 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:04:48.465 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 9.478ms
+2018-10-08 14:04:48.465 +08:00 [INF] Request finished in 10.1871ms 200 application/json; charset=utf-8
+2018-10-08 14:57:12.098 +08:00 [INF] Hello, world!
+2018-10-08 14:57:15.390 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:57:16.602 +08:00 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 14:57:16.731 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 14:57:19.054 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 14:57:19.188 +08:00 [INF] Request finished in 133.9687ms 404 
+2018-10-08 14:57:56.142 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3  
+2018-10-08 14:57:56.196 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:57:56.256 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 14:57:56.275 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:57:56.495 +08:00 [INF] Executed DbCommand (122ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 14:57:56.598 +08:00 [ERR] Get All Posts...
+2018-10-08 14:57:56.657 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 388.3856ms.
+2018-10-08 14:57:56.675 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:57:56.860 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 660.2199ms
+2018-10-08 14:57:56.871 +08:00 [INF] Request finished in 728.4301ms 200 application/json; charset=utf-8
+2018-10-08 14:58:03.644 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=2  
+2018-10-08 14:58:03.645 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:58:03.648 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 14:58:03.649 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:58:03.659 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 14:58:03.660 +08:00 [ERR] Get All Posts...
+2018-10-08 14:58:03.665 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.816100000000002ms.
+2018-10-08 14:58:03.666 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:58:03.667 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 21.826600000000003ms
+2018-10-08 14:58:03.667 +08:00 [INF] Request finished in 23.4413ms 200 application/json; charset=utf-8
+2018-10-08 14:58:11.285 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=2  
+2018-10-08 14:58:11.286 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 14:58:11.287 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 14:58:11.288 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 14:58:11.290 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 14:58:11.290 +08:00 [ERR] Get All Posts...
+2018-10-08 14:58:11.291 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.442ms.
+2018-10-08 14:58:11.308 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 14:58:11.323 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 37.2105ms
+2018-10-08 14:58:11.323 +08:00 [INF] Request finished in 37.8478ms 200 application/xml; charset=utf-8
+2018-10-08 15:19:06.753 +08:00 [INF] Hello, world!
+2018-10-08 15:19:17.308 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:19:18.739 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 15:19:18.967 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 15:19:20.125 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 15:19:20.310 +08:00 [INF] Request finished in 184.3839ms 404 
+2018-10-08 15:22:53.982 +08:00 [INF] Hello, world!
+2018-10-08 15:23:03.265 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:23:04.827 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 15:23:05.071 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 15:23:06.057 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 15:23:06.056 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=2  
+2018-10-08 15:23:06.228 +08:00 [INF] Request finished in 176.5229ms 404 
+2018-10-08 15:23:06.294 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:23:06.360 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:23:06.391 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:23:06.622 +08:00 [INF] Executed DbCommand (112ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:23:06.781 +08:00 [INF] Executed DbCommand (82ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:23:06.917 +08:00 [ERR] Get All Posts...
+2018-10-08 15:23:07.109 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 732.9559ms.
+2018-10-08 15:23:07.144 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:23:07.177 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 879.6787ms
+2018-10-08 15:23:07.188 +08:00 [INF] Request finished in 1136.9414ms 200 application/xml; charset=utf-8
+2018-10-08 15:24:14.476 +08:00 [INF] Hello, world!
+2018-10-08 15:24:17.138 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:24:17.485 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 15:24:17.563 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 15:24:18.467 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 15:24:18.614 +08:00 [INF] Request finished in 147.5909ms 404 
+2018-10-08 15:24:22.427 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=2  
+2018-10-08 15:24:22.471 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:24:22.528 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:24:22.544 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:24:22.646 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:24:23.209 +08:00 [INF] Executed DbCommand (468ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:24:23.292 +08:00 [ERR] Get All Posts...
+2018-10-08 15:24:23.412 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 870.62700000000007ms.
+2018-10-08 15:24:23.442 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:24:23.475 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 997.40420000000006ms
+2018-10-08 15:24:23.487 +08:00 [INF] Request finished in 1059.7085ms 200 application/xml; charset=utf-8
+2018-10-08 15:24:51.356 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3  
+2018-10-08 15:24:51.357 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:24:51.359 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:24:51.360 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:24:51.366 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:24:51.369 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:24:51.369 +08:00 [ERR] Get All Posts...
+2018-10-08 15:24:51.371 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.7813ms.
+2018-10-08 15:24:51.372 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:24:51.373 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 15.3815ms
+2018-10-08 15:24:51.373 +08:00 [INF] Request finished in 17.1879ms 200 application/xml; charset=utf-8
+2018-10-08 15:51:14.489 +08:00 [INF] Hello, world!
+2018-10-08 15:51:43.598 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:51:51.992 +08:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 15:51:52.845 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 15:51:56.976 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 15:51:57.159 +08:00 [INF] Request finished in 184.6923ms 404 
+2018-10-08 15:54:06.165 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3  
+2018-10-08 15:54:06.219 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:54:06.273 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:54:06.291 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:54:06.508 +08:00 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:54:06.752 +08:00 [INF] Executed DbCommand (184ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:54:06.837 +08:00 [ERR] Get All Posts...
+2018-10-08 15:54:07.229 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 944.1711ms.
+2018-10-08 15:54:07.262 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:54:07.291 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1068.3132ms
+2018-10-08 15:54:07.299 +08:00 [INF] Request finished in 1134.2304ms 200 application/xml; charset=utf-8
+2018-10-08 15:54:13.552 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 15:54:13.552 +08:00 [INF] Request finished in 0.3886ms 404 
+2018-10-08 15:54:42.759 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=1&pagesize=3  
+2018-10-08 15:54:42.761 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:54:42.767 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:54:42.768 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:54:42.780 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:54:42.791 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:54:42.792 +08:00 [ERR] Get All Posts...
+2018-10-08 15:54:42.794 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 27.216ms.
+2018-10-08 15:54:42.795 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:54:42.796 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 33.4899ms
+2018-10-08 15:54:42.797 +08:00 [INF] Request finished in 38.4058ms 200 application/xml; charset=utf-8
+2018-10-08 15:55:02.792 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=4&pagesize=3  
+2018-10-08 15:55:02.793 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:55:02.794 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:55:02.795 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:55:02.799 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:55:02.806 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:55:02.807 +08:00 [ERR] Get All Posts...
+2018-10-08 15:55:02.807 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.2527ms.
+2018-10-08 15:55:02.808 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:55:02.808 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 15.2345ms
+2018-10-08 15:55:02.808 +08:00 [INF] Request finished in 16.3216ms 200 application/xml; charset=utf-8
+2018-10-08 15:55:21.797 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=3&pagesize=3  
+2018-10-08 15:55:21.797 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 15:55:21.797 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 15:55:21.798 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 15:55:21.800 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [x]
+2018-10-08 15:55:21.806 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+ORDER BY [x].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 15:55:21.807 +08:00 [ERR] Get All Posts...
+2018-10-08 15:55:21.807 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.7775ms.
+2018-10-08 15:55:21.807 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 15:55:21.808 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 11.062800000000001ms
+2018-10-08 15:55:21.808 +08:00 [INF] Request finished in 11.6898ms 200 application/xml; charset=utf-8
+2018-10-08 16:14:01.242 +08:00 [INF] Hello, world!
+2018-10-08 16:14:05.277 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:14:06.011 +08:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 16:14:06.117 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 16:14:06.936 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 16:14:07.052 +08:00 [INF] Request finished in 115.6494ms 404 
+2018-10-08 16:14:35.077 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=3&pagesize=3  
+2018-10-08 16:14:35.126 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:14:35.188 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:14:35.211 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:14:35.465 +08:00 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-08 16:14:35.492 +08:00 [WRN] Query: '(from Post <generated>_2 in DbSet<Post> select [<generated>_2]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2018-10-08 16:14:36.088 +08:00 [INF] Executed DbCommand (571ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 16:14:36.154 +08:00 [ERR] Get All Posts...
+2018-10-08 16:14:36.399 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1192.356ms.
+2018-10-08 16:14:36.434 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:14:36.472 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1340.6207000000002ms
+2018-10-08 16:14:36.488 +08:00 [INF] Request finished in 1411.3478ms 200 application/xml; charset=utf-8
+2018-10-08 16:15:39.243 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=1&pagesize=3  
+2018-10-08 16:15:39.245 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:15:39.248 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:15:39.249 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:15:39.267 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-08 16:15:39.273 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 16:15:39.275 +08:00 [ERR] Get All Posts...
+2018-10-08 16:15:39.277 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 28.7173ms.
+2018-10-08 16:15:39.278 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:15:39.279 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 33.9788ms
+2018-10-08 16:15:39.279 +08:00 [INF] Request finished in 36.0171ms 200 application/xml; charset=utf-8
+2018-10-08 16:16:06.327 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=1&pagesize=3&title=Post%20Title%204  
+2018-10-08 16:16:06.327 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:16:06.329 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:16:06.330 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:16:06.360 +08:00 [WRN] The LINQ expression 'where ([x].Title.ToLowerInvariant() == __title_0)' could not be translated and will be evaluated locally.
+2018-10-08 16:16:06.368 +08:00 [WRN] The LINQ expression 'Count()' could not be translated and will be evaluated locally.
+2018-10-08 16:16:06.503 +08:00 [INF] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:16:06.524 +08:00 [WRN] Query: '(from Post x in DbSet<Post> where string [x].Title.ToLowerInvariant() == __title_0 select [x]).Skip(...' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2018-10-08 16:16:06.529 +08:00 [WRN] The LINQ expression 'where ([x].Title.ToLowerInvariant() == __title_0)' could not be translated and will be evaluated locally.
+2018-10-08 16:16:06.531 +08:00 [WRN] The LINQ expression 'Skip(__p_1)' could not be translated and will be evaluated locally.
+2018-10-08 16:16:06.531 +08:00 [WRN] The LINQ expression 'Take(__p_2)' could not be translated and will be evaluated locally.
+2018-10-08 16:16:06.613 +08:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:16:06.623 +08:00 [ERR] Get All Posts...
+2018-10-08 16:16:06.623 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 294.3748ms.
+2018-10-08 16:16:06.624 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:16:06.624 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 296.8441ms
+2018-10-08 16:16:06.624 +08:00 [INF] Request finished in 297.9582ms 200 application/xml; charset=utf-8
+2018-10-08 16:16:23.220 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=1&pagesize=3  
+2018-10-08 16:16:23.220 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:16:23.221 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:16:23.221 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:16:23.223 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-08 16:16:23.227 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 16:16:23.227 +08:00 [ERR] Get All Posts...
+2018-10-08 16:16:23.227 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.4922ms.
+2018-10-08 16:16:23.228 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:16:23.228 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 7.6697000000000006ms
+2018-10-08 16:16:23.228 +08:00 [INF] Request finished in 8.3485ms 200 application/xml; charset=utf-8
+2018-10-08 16:16:27.997 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?  
+2018-10-08 16:16:27.999 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:16:28.001 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:16:28.001 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:16:28.005 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-08 16:16:28.018 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-08 16:16:28.018 +08:00 [ERR] Get All Posts...
+2018-10-08 16:16:28.019 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17.5383ms.
+2018-10-08 16:16:28.019 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:16:28.022 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 22.704600000000003ms
+2018-10-08 16:16:28.022 +08:00 [INF] Request finished in 24.7135ms 200 application/xml; charset=utf-8
+2018-10-08 16:16:42.059 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?title=Post%20Title%201  
+2018-10-08 16:16:42.060 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:16:42.061 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:16:42.061 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:16:42.064 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:16:42.066 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:16:42.066 +08:00 [ERR] Get All Posts...
+2018-10-08 16:16:42.067 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.7434ms.
+2018-10-08 16:16:42.067 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:16:42.067 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 6.9447ms
+2018-10-08 16:16:42.067 +08:00 [INF] Request finished in 7.7663ms 200 application/xml; charset=utf-8
+2018-10-08 16:17:11.866 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3&title=Post%20Title%204  
+2018-10-08 16:17:11.866 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:17:11.867 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:17:11.868 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:17:11.871 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:17:11.874 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:17:11.875 +08:00 [ERR] Get All Posts...
+2018-10-08 16:17:11.875 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.8311ms.
+2018-10-08 16:17:11.875 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:17:11.876 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 9.0395ms
+2018-10-08 16:17:11.876 +08:00 [INF] Request finished in 10.0001ms 200 application/xml; charset=utf-8
+2018-10-08 16:17:16.297 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3&title=Post%20Title%204  
+2018-10-08 16:17:16.297 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 16:17:16.298 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 16:17:16.299 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 16:17:16.302 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:17:16.318 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 16:17:16.318 +08:00 [ERR] Get All Posts...
+2018-10-08 16:17:16.318 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 20.349600000000002ms.
+2018-10-08 16:17:16.318 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 16:17:16.319 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 21.2817ms
+2018-10-08 16:17:16.319 +08:00 [INF] Request finished in 21.9815ms 200 application/xml; charset=utf-8
+2018-10-08 17:07:53.470 +08:00 [INF] Hello, world!
+2018-10-08 17:08:12.021 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 17:08:14.670 +08:00 [INF] Executed DbCommand (331ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-08 17:08:14.961 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-08 17:08:17.182 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/  
+2018-10-08 17:08:17.549 +08:00 [INF] Request finished in 368.1258ms 404 
+2018-10-08 17:10:12.837 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44344/api/posts?pageindex=0&pagesize=3&title=Post%20Title%204  
+2018-10-08 17:10:13.147 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-08 17:10:13.345 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-08 17:10:13.415 +08:00 [INF] Entity Framework Core 2.1.3-rtm-32065 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-08 17:10:13.540 +08:00 [WRN] The LINQ expression 'where ([x].Title.ToLowerInvariant() == __title_0)' could not be translated and will be evaluated locally.
+2018-10-08 17:10:13.587 +08:00 [WRN] The LINQ expression 'Count()' could not be translated and will be evaluated locally.
+2018-10-08 17:10:13.773 +08:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 17:10:13.826 +08:00 [WRN] Query: '(from Post x in DbSet<Post> where string [x].Title.ToLowerInvariant() == __title_0 select [x]).Skip(...' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2018-10-08 17:10:13.840 +08:00 [WRN] The LINQ expression 'where ([x].Title.ToLowerInvariant() == __title_0)' could not be translated and will be evaluated locally.
+2018-10-08 17:10:13.841 +08:00 [WRN] The LINQ expression 'Skip(__p_1)' could not be translated and will be evaluated locally.
+2018-10-08 17:10:13.843 +08:00 [WRN] The LINQ expression 'Take(__p_2)' could not be translated and will be evaluated locally.
+2018-10-08 17:10:13.897 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[Author], [x].[Body], [x].[LastModified], [x].[Remark], [x].[Title]
+FROM [Posts] AS [x]
+2018-10-08 17:10:14.012 +08:00 [ERR] Get All Posts...
+2018-10-08 17:10:14.307 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 936.5648ms.
+2018-10-08 17:10:14.397 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[BlogDemo.Infrastructure.Resources.PostResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-10-08 17:10:14.450 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 1296.6084ms
+2018-10-08 17:10:14.463 +08:00 [INF] Request finished in 1639.4492ms 200 application/xml; charset=utf-8
