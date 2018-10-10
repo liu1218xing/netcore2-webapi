@@ -8,8 +8,11 @@ namespace BlogDemo.Core.Interfaces
 {
     public interface  IPostRepository
     {
-        Task<PaginatedList<Post>> GetAllPostsAsyn(PostParameters postParameters);
+        Task<PaginatedList<Post>> GetAllPostsAsync(PostParameters postParameters);
         void AddPost(Post post);
         Task<Post> GetPostByIdAsync(int id);
+        void Delete(Post post);
+        void Update(Post post);
+
     }
 }

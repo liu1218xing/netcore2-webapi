@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using BlogDemo.Infrastructure.Services;
 using Newtonsoft.Json.Serialization;
+using FluentValidation.AspNetCore;
 
 namespace BlogDemo.Api
 {
@@ -40,12 +41,25 @@ namespace BlogDemo.Api
             services.AddMvc(options =>
             {
                 options.ReturnHttpNotAcceptable = true;
-                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                //options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                var intputFormatter = options.InputFormatters.OfType<JsonInputFormatter>().FirstOrDefault();
+                if (intputFormatter != null)
+                {
+                    intputFormatter.SupportedMediaTypes.Add("application/vnd.cgzl.post.create+json");
+                    intputFormatter.SupportedMediaTypes.Add("application/vnd.cgzl.post.update+json");
+                }
+
+                var outputFormatter = options.OutputFormatters.OfType<JsonOutputFormatter>().FirstOrDefault();
+                if (outputFormatter != null)
+                {
+                    outputFormatter.SupportedMediaTypes.Add("application/vnd.cgzl.hateoas+json");
+                }
             })
             .AddJsonOptions(options=>
             {
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            });
+            })
+            .AddFluentValidation();
             services.AddDbContext<MyContext>(options =>
             {
                 // var connectionString = Configuration["ConnectionStrings:DefaultConnection"];
@@ -68,8 +82,8 @@ namespace BlogDemo.Api
                 return  new UrlHelper(actionContext);
             });
             services.AddAutoMapper();
-            services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
-
+            services.AddTransient<IValidator<PostAddResource>, PostAddOrUpdateResourceValidator<PostAddResource>>();
+            services.AddTransient<IValidator<PostUpdateResource>, PostAddOrUpdateResourceValidator<PostUpdateResource>>();
             var propertyMappingContainer = new PropertyMappingContainer();
             propertyMappingContainer.Register<PostPropertyMapping>();
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);

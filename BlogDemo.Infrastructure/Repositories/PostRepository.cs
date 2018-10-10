@@ -30,7 +30,14 @@ namespace BlogDemo.Infrastructure.Repositories
             _myContext.Add(post);
         }
 
-        public async Task<PaginatedList<Post>> GetAllPostsAsyn(PostParameters postParameters)
+        public void Delete(Post post)
+        {
+            _myContext.Posts.Remove(post);
+        }
+
+       
+
+        public async Task<PaginatedList<Post>> GetAllPostsAsync(PostParameters postParameters)
         {
             var query = _myContext.Posts.AsQueryable();
             
@@ -52,10 +59,16 @@ namespace BlogDemo.Infrastructure.Repositories
              
         }
 
+        
+
         public async Task<Post> GetPostByIdAsync(int id)
         {
             return await _myContext.Posts.FindAsync(id);
         }
 
+        public void Update(Post post)
+        {
+            _myContext.Entry(post).State = EntityState.Modified;
+        }
     }
 }

@@ -15,6 +15,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using BlogDemo.Infrastructure.Extensions;
 using BlogDemo.Infrastructure.Services;
+using BlogDemo.Api.Helpers;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BlogDemo.Api.Controllers
 {
@@ -52,8 +54,55 @@ namespace BlogDemo.Api.Controllers
             _typeHelperService = typeHelperService;
             _propertyMappingContainer = propertyMappingContainer;
         }
+        [HttpGet(Name = "GetPosts")]
+        [RequestHeaderMatchingMediaType("Accept", new[] { "application/vnd.cgzl.hateoas+json" })]
+        public async Task<IActionResult> GetHateoas(PostParameters postParameters)
+        {
+            if (!_propertyMappingContainer.ValidateMappingExistsFor<PostResource, Post>(postParameters.OrderBy))
+            {
+                return BadRequest("Can't finds fields for sorting.");
+            }
+
+            if (!_typeHelperService.TypeHasProperties<PostResource>(postParameters.Fields))
+            {
+                return BadRequest("Fields not exist.");
+            }
+
+            var postList = await _postRepository.GetAllPostsAsync(postParameters);
+            var postResources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postList);
+
+            var shapedPostResources = postResources.ToDynamicIEnumerable(postParameters.Fields);
+            var shapedWithLinks = shapedPostResources.Select(x =>
+            {
+                var dict = x as IDictionary<string, object>;
+                var postLinks = CreateLinksForPost((int)dict["Id"], postParameters.Fields);
+                dict.Add("links", postLinks);
+                return dict;
+            });
+            var links = CreateLinksForPosts(postParameters, postList.HasPrevious, postList.HasNext);
+            var result = new
+            {
+                value = shapedWithLinks,
+                links
+            };
+
+            var meta = new
+            {
+                postList.PageSize,
+                postList.PageIndex,
+                postList.TotalItemsCount,
+                postList.PageCount
+            };
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            }));
+
+            return Ok(result);
+        }
 
         [HttpGet(Name = "GetPosts")]
+        [RequestHeaderMatchingMediaType("Accept", new[] { "application/json" })]
         public async Task<IActionResult> Get(PostParameters postParameters)
         {
             if (!_propertyMappingContainer.ValidateMappingExistsFor<PostResource, Post>(postParameters.OrderBy))
@@ -65,35 +114,93 @@ namespace BlogDemo.Api.Controllers
             {
                 return BadRequest("Fields not exist.");
             }
-            var postList = await _postRepository.GetAllPostsAsyn(postParameters);
-            //_logger.LogInformation("Get All Posts...");
-            var v = _configuration["Key1"];
-            _logger.LogError("Get All Posts...");
-            var postRescources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postList);
-            var result = postRescources.ToDynamicIEnumerable(postParameters.Fields);
+
+            var postList = await _postRepository.GetAllPostsAsync(postParameters);
+
+            var postResources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postList);
+
             var previousPageLink = postList.HasPrevious ?
-                CreatePostUri(postParameters, PaginationResourceUriType.PreviousPage) : null;
+                CreatePostUri(postParameters,
+                    PaginationResourceUriType.PreviousPage) : null;
 
             var nextPageLink = postList.HasNext ?
-                CreatePostUri(postParameters, PaginationResourceUriType.NextPage) : null;
+                CreatePostUri(postParameters,
+                    PaginationResourceUriType.NextPage) : null;
+
             var meta = new
             {
-                 postList.PageSize,
-                 postList.PageIndex,
-                 postList.TotalItemsCount,
-                 postList.PageCount,
+                postList.TotalItemsCount,
+                postList.PageSize,
+                postList.PageIndex,
+                postList.PageCount,
                 previousPageLink,
                 nextPageLink
             };
-            Response.Headers.Add("x-pagination",JsonConvert.SerializeObject(meta,new JsonSerializerSettings
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             }));
-            //throw new Exception("Error!!!!!");
-            return Ok(result);
+
+            return Ok(postResources.ToDynamicIEnumerable(postParameters.Fields));
         }
 
-        [HttpGet("{id}")]   
+        //[HttpGet(Name = "GetPosts")]
+        //public async Task<IActionResult> Get(PostParameters postParameters)
+        //{
+        //    if (!_propertyMappingContainer.ValidateMappingExistsFor<PostResource, Post>(postParameters.OrderBy))
+        //    {
+        //        return BadRequest("Can't finds fields for sorting.");
+        //    }
+
+        //    if (!_typeHelperService.TypeHasProperties<PostResource>(postParameters.Fields))
+        //    {
+        //        return BadRequest("Fields not exist.");
+        //    }
+        //    var postList = await _postRepository.GetAllPostsAsyn(postParameters);
+        //    //_logger.LogInformation("Get All Posts...");
+        //    var v = _configuration["Key1"];
+        //    _logger.LogError("Get All Posts...");
+        //    var postResources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postList);
+
+        //    var shapedPostResources = postResources.ToDynamicIEnumerable(postParameters.Fields);
+        //    var shapedWithLinks = shapedPostResources.Select(x =>
+        //    {
+        //        var dict = x as IDictionary<string, object>;
+        //        var postLinks = CreateLinksForPost((int)dict["Id"], postParameters.Fields);
+        //         dict.Add("links", postLinks);
+        //         return dict;
+
+        //     });
+        //    var links = CreateLinksForPosts(postParameters, postList.HasPrevious, postList.HasNext);
+        //    var result = new
+        //    {
+        //        value = shapedWithLinks,
+        //        links
+        //    };
+        //    var previousPageLink = postList.HasPrevious ?
+        //        CreatePostUri(postParameters, PaginationResourceUriType.PreviousPage) : null;
+
+        //    var nextPageLink = postList.HasNext ?
+        //        CreatePostUri(postParameters, PaginationResourceUriType.NextPage) : null;
+        //    var meta = new
+        //    {
+        //         postList.PageSize,
+        //         postList.PageIndex,
+        //         postList.TotalItemsCount,
+        //         postList.PageCount,
+        //        previousPageLink,
+        //        nextPageLink
+        //    };
+        //    Response.Headers.Add("x-pagination",JsonConvert.SerializeObject(meta,new JsonSerializerSettings
+        //    {
+        //        ContractResolver = new CamelCasePropertyNamesContractResolver()
+        //    }));
+        //    //throw new Exception("Error!!!!!");
+        //    return Ok(result);
+        //}
+
+        [HttpGet("{id}",Name= "GetPost")]   
         public async Task<IActionResult> Get(int id,string fields = null)
         {
             if (!_typeHelperService.TypeHasProperties<PostResource>(fields))
@@ -106,23 +213,156 @@ namespace BlogDemo.Api.Controllers
                 return NotFound();
             }
             var postResource = _mapper.Map<Post, PostResource>(post);
-            var result = postResource.ToDynamic(fields);
+            var shapedPostResources = postResource.ToDynamic(fields);
+            var links = CreateLinksForPost(id, fields);
+
+            var result = shapedPostResources as IDictionary<string, object>;
+            result.Add("links", links);
             return Ok(result);
         }
-        [HttpPost]
-        public async Task<IActionResult> Post()
+        [HttpPost(Name = "CreatePost")]
+        [RequestHeaderMatchingMediaType("Content-Type", new[] { "application/vnd.cgzl.post.create+json" })]
+        [RequestHeaderMatchingMediaType("Accept", new[] { "application/vnd.cgzl.hateoas+json" })]
+        public async Task<IActionResult> Post([FromBody] PostAddResource postAddResource)
         {
-            var newPost = new Post
+            if(postAddResource== null)
             {
-                Author = "Admin",
-                Body = "1231321312312321312321321",
-                Title = "Title A",
-                LastModified = DateTime.Now
-            };
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
+            var newPost = _mapper.Map<PostAddResource, Post>(postAddResource);
+            newPost.Author = "admin";
+            newPost.LastModified = DateTime.Now;
+
             _postRepository.AddPost(newPost);
-            await _unitOfWork.SaveAsync();
-            return Ok();
+            if(! await _unitOfWork.SaveAsync())
+            {
+                throw new Exception("Save Failed!");
+            }
+            var resultResource = _mapper.Map<Post, PostResource>(newPost);
+            var links = CreateLinksForPost(newPost.Id);
+            var linkedPostResource = resultResource.ToDynamic() as IDictionary<string, object>;
+            linkedPostResource.Add("links", links);
+
+            return CreatedAtRoute("GetPost",new { id = linkedPostResource["Id"]},linkedPostResource );
         }
+        [HttpDelete("{id}",Name = "DeletePost")]
+        public async Task<IActionResult> DeletePost(int id)
+        {
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            _postRepository.Delete(post);
+            if( ! await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Deleting post {id} failed when saving.");
+            }
+            return NoContent();
+        }
+        [HttpPut("{id}",Name = "UpdatePost")]
+        [RequestHeaderMatchingMediaType("Content-Type", new[] { "application/vnd.cgzl.post.update+json" })]
+        public async Task<IActionResult> UpdatePost(int id,[FromBody] PostUpdateResource postUpdate)
+        {
+            if (postUpdate == null)
+            {
+                return BadRequest();
+            }
+            
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
+            var post =await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            post.LastModified = DateTime.Now;
+            _mapper.Map(postUpdate, post);
+            if(! await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Updating post {id} failed when saving.");
+            }
+            return NoContent();
+
+        }
+        //[HttpPatch("{id}", Name = "PartiallyUpdatePost")]
+        //public async Task<IActionResult> PartiallyUpdateCityForCountry(int id,
+        //    [FromBody] JsonPatchDocument<PostUpdateResource> patchDoc)
+        //{
+        //    if(patchDoc == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    var post = await _postRepository.GetPostByIdAsync(id);
+        //    if(post == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var postToPatch = _mapper.Map<PostUpdateResource>(post);
+        //    patchDoc.ApplyTo(postToPatch, ModelState);
+        //    TryValidateModel(postToPatch);
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return new MyUnprocessableEntityObjectResult(ModelState);
+        //    }
+
+        //    _mapper.Map(postToPatch, post);
+        //    post.LastModified = DateTime.Now;
+        //    _postRepository.Update(post);
+
+        //    if (!await _unitOfWork.SaveAsync())
+        //    {
+        //        throw new Exception($"Patching city {id} failed when saving.");
+        //    }
+
+        //    return NoContent();
+
+        //}
+
+        [HttpPatch("{id}", Name = "PartiallyUpdatePost")]
+        public async Task<IActionResult> PartiallyUpdateCityForCountry(int id,
+            [FromBody] JsonPatchDocument<PostUpdateResource> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var postToPatch = _mapper.Map<PostUpdateResource>(post);
+
+            patchDoc.ApplyTo(postToPatch, ModelState);
+
+            TryValidateModel(postToPatch);
+
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
+
+            _mapper.Map(postToPatch, post);
+            post.LastModified = DateTime.Now;
+            _postRepository.Update(post);
+
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Patching city {id} failed when saving.");
+            }
+
+            return NoContent();
+        }
+
         private string CreatePostUri(PostParameters parameters, PaginationResourceUriType uriType)
         {
             switch (uriType)
@@ -177,6 +417,34 @@ namespace BlogDemo.Api.Controllers
             links.Add(
                 new LinkResource(
                     _urlHelper.Link("DeletePost", new { id }), "delete_post", "DELETE"));
+
+            return links;
+        }
+        private IEnumerable<LinkResource> CreateLinksForPosts(PostParameters postResourceParameters,
+            bool hasPrevious, bool hasNext)
+        {
+            var links = new List<LinkResource>
+            {
+                new LinkResource(
+                    CreatePostUri(postResourceParameters, PaginationResourceUriType.CurrentPage),
+                    "self", "GET")
+            };
+
+            if (hasPrevious)
+            {
+                links.Add(
+                    new LinkResource(
+                        CreatePostUri(postResourceParameters, PaginationResourceUriType.PreviousPage),
+                        "previous_page", "GET"));
+            }
+
+            if (hasNext)
+            {
+                links.Add(
+                    new LinkResource(
+                        CreatePostUri(postResourceParameters, PaginationResourceUriType.NextPage),
+                        "next_page", "GET"));
+            }
 
             return links;
         }
