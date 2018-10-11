@@ -1,0 +1,12 @@
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\bin\Debug\netcoreapp2.0\BlogIdp.deps.json
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\bin\Debug\netcoreapp2.0\BlogIdp.runtimeconfig.json
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\bin\Debug\netcoreapp2.0\BlogIdp.runtimeconfig.dev.json
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\bin\Debug\netcoreapp2.0\BlogIdp.dll
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\bin\Debug\netcoreapp2.0\BlogIdp.pdb
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.csprojAssemblyReference.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.csproj.CoreCompileInputs.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.AssemblyInfoInputs.cache
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.AssemblyInfo.cs
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.dll
+G:\study\git\aspnetcore-study\BlogDemo\BlogIdp\obj\Debug\netcoreapp2.0\BlogIdp.pdb

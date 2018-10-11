@@ -24,6 +24,9 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using BlogDemo.Infrastructure.Services;
 using Newtonsoft.Json.Serialization;
 using FluentValidation.AspNetCore;
+using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace BlogDemo.Api
 {
@@ -67,11 +70,19 @@ namespace BlogDemo.Api
                 //options.UseSqlite(connectionString);
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            //services.AddHttpsRedirection(options =>
-            //{
-            //    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-            //    options.HttpsPort = 5001;
-            //});
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 6001;
+            });
+            services
+                .AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "https://localhost:5001";
+                    //options.Authority = "https://localhost:5001";
+                    options.ApiName = "restapi";
+                });
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -89,15 +100,23 @@ namespace BlogDemo.Api
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
 
             services.AddTransient<ITypeHelperService, TypeHelperService>();
+            services.Configure<MvcOptions>(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseMyExceptionHandler(loggerFactory);
-            
+
             //app.UseDeveloperExceptionPage();
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
             if (env.IsProduction())
             {
 

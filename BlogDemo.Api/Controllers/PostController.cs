@@ -17,9 +17,11 @@ using BlogDemo.Infrastructure.Extensions;
 using BlogDemo.Infrastructure.Services;
 using BlogDemo.Api.Helpers;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogDemo.Api.Controllers
 {
+    [Authorize]
     [Route("api/posts")]
     public class PostController: Controller
     {
