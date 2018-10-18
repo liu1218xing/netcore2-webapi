@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlogDemo.Api.Controllers
 {
+    [AllowAnonymous]
     //[Authorize]
    [Route("Api/values")]
     public class ValuesController:Controller

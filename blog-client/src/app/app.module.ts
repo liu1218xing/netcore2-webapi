@@ -1,8 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+import { Routes, RouterModule } from '@angular/router';
+
+const routes:Routes=[
+  {path:'',loadChildren:'./blog/blog.module#BlogModule'},
+  {path:'*',redirectTo:'blog'}
+];
 @NgModule({
   declarations: [
     AppComponent
@@ -10,11 +19,12 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    MatButtonModule, 
     MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export class PizzaPartyAppModule { }

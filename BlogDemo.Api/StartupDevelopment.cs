@@ -100,6 +100,16 @@ namespace BlogDemo.Api
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
 
             services.AddTransient<ITypeHelperService, TypeHelperService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularDevOrigin",
+                    builder => builder.WithOrigins("http://localhost:4200")
+                        .WithExposedHeaders("X-Pagination")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+            });
+
             services.Configure<MvcOptions>(options =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -115,7 +125,9 @@ namespace BlogDemo.Api
             app.UseMyExceptionHandler(loggerFactory);
 
             //app.UseDeveloperExceptionPage();
+            app.UseCors("AllowAngularDevOrigin");
             app.UseHttpsRedirection();
+
             app.UseAuthentication();
             if (env.IsProduction())
             {

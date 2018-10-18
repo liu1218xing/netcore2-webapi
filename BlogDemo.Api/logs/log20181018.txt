@@ -1,0 +1,164 @@
+2018-10-18 18:24:27.084 +08:00 [INF] Hello, world!
+2018-10-18 18:24:33.225 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-18 18:24:34.341 +08:00 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-18 18:24:34.470 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-18 18:24:35.161 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-10-18 18:24:38.369 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 18:24:38.420 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:24:38.565 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 18:24:38.585 +08:00 [INF] Authorization failed.
+2018-10-18 18:24:38.594 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:24:38.605 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:24:38.803 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:24:38.806 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:24:38.813 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 239.8006ms
+2018-10-18 18:24:38.835 +08:00 [INF] Request finished in 465.6469ms 401 
+2018-10-18 18:25:23.454 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 18:25:23.459 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:25:23.467 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 18:25:23.471 +08:00 [INF] Authorization failed.
+2018-10-18 18:25:23.472 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:25:23.478 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:25:23.482 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:25:23.483 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:25:23.485 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 14.838000000000001ms
+2018-10-18 18:25:23.489 +08:00 [INF] Request finished in 35.44ms 401 
+2018-10-18 18:25:25.601 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 18:25:25.603 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:25:25.605 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 18:25:25.609 +08:00 [INF] Authorization failed.
+2018-10-18 18:25:25.613 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:25:25.620 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:25:25.625 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:25:25.628 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:25:25.630 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 21.285500000000003ms
+2018-10-18 18:25:25.637 +08:00 [INF] Request finished in 36.0241ms 401 
+2018-10-18 18:25:28.478 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 18:25:28.480 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:25:28.482 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 18:25:28.486 +08:00 [INF] Authorization failed.
+2018-10-18 18:25:28.487 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:25:28.496 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:25:28.498 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:25:28.502 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:25:28.506 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 20.2129ms
+2018-10-18 18:25:28.509 +08:00 [INF] Request finished in 31.4713ms 401 
+2018-10-18 18:25:50.729 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 18:25:50.733 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:25:50.737 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 18:25:50.748 +08:00 [INF] Authorization failed.
+2018-10-18 18:25:50.752 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:25:50.767 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:25:50.773 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:25:50.782 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:25:50.786 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 37.7582ms
+2018-10-18 18:25:50.789 +08:00 [INF] Request finished in 60.4784ms 401 
+2018-10-18 18:25:54.573 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/  
+2018-10-18 18:25:54.581 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:25:54.584 +08:00 [INF] Request finished in 11.5238ms 404 
+2018-10-18 18:26:00.048 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts/1  
+2018-10-18 18:26:00.051 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:26:00.092 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-18 18:26:00.096 +08:00 [INF] Authorization failed.
+2018-10-18 18:26:00.097 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 18:26:00.099 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 18:26:00.101 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 18:26:00.104 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 18:26:00.107 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 11.185500000000001ms
+2018-10-18 18:26:00.115 +08:00 [INF] Request finished in 66.1504ms 401 
+2018-10-18 18:26:37.438 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts  
+2018-10-18 18:26:37.440 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 18:26:37.442 +08:00 [INF] Request finished in 4.8715ms 404 
+2018-10-18 19:47:32.535 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-18 19:47:32.790 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:47:33.362 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-18 19:47:33.395 +08:00 [INF] Authorization failed.
+2018-10-18 19:47:33.397 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 19:47:33.399 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 19:47:33.411 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 19:47:33.412 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 19:47:33.414 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 35.015ms
+2018-10-18 19:47:33.418 +08:00 [INF] Request finished in 969.7785ms 401 
+2018-10-18 19:50:32.320 +08:00 [INF] Hello, world!
+2018-10-18 19:50:34.507 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-18 19:50:36.352 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-18 19:50:36.452 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-18 19:50:37.060 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-10-18 19:50:37.887 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-18 19:50:37.972 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:50:38.311 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-18 19:50:38.389 +08:00 [INF] Authorization failed.
+2018-10-18 19:50:38.410 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-18 19:50:38.444 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-18 19:50:38.823 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-18 19:50:38.825 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-18 19:50:38.831 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 492.10760000000005ms
+2018-10-18 19:50:38.845 +08:00 [INF] Request finished in 960.2902ms 401 
+2018-10-18 19:50:45.860 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts/1  
+2018-10-18 19:50:45.862 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:50:45.918 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-18 19:50:45.998 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Valid"
+2018-10-18 19:50:46.024 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-18 19:50:46.244 +08:00 [INF] Executed DbCommand (106ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-18 19:50:46.395 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 378.9503ms.
+2018-10-18 19:50:46.416 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2018-10-18 19:50:46.512 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 589.7789ms
+2018-10-18 19:50:46.521 +08:00 [INF] Request finished in 661.092ms 200 application/json; charset=utf-8
+2018-10-18 19:50:46.854 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/favicon.ico  
+2018-10-18 19:50:46.859 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:50:46.862 +08:00 [INF] Request finished in 7.7369ms 404 
+2018-10-18 19:50:51.006 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts  
+2018-10-18 19:50:51.008 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:50:51.012 +08:00 [INF] Request finished in 6.1512ms 404 
+2018-10-18 19:50:56.791 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts/1  
+2018-10-18 19:50:56.796 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-18 19:50:56.801 +08:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2018-10-18 19:50:56.812 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Valid"
+2018-10-18 19:50:56.822 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-18 19:50:56.832 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Author], [e].[Body], [e].[LastModified], [e].[Remark], [e].[Title]
+FROM [Posts] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-10-18 19:50:56.843 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 21.604100000000003ms.
+2018-10-18 19:50:56.850 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2018-10-18 19:50:56.853 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 44.697900000000004ms
+2018-10-18 19:50:56.857 +08:00 [INF] Request finished in 65.836ms 200 application/json; charset=utf-8
