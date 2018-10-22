@@ -6,10 +6,10 @@ import { RequireAuthenticatedUserRouteGuard } from '../shared/oidc/require-authe
 
 const routes: Routes = [
   {
-    path:'',component:BlogAppComponent,
-    children:[
-      {path:'post-list',component:PostListComponent,canActivate:[RequireAuthenticatedUserRouteGuard]},
-      {path:'**',redirectTo:'post-list'}
+    path: '', component: BlogAppComponent,
+    children: [
+      { path: 'post-list', component: PostListComponent, canActivate: [RequireAuthenticatedUserRouteGuard] },
+      { path: '**', redirectTo: 'post-list'}
     ]
   }
 ];
