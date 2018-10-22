@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BlogDemo.Api.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     [Authorize]
     [Route("api/posts")]
     public class PostController: Controller

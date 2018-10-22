@@ -1257,3 +1257,31 @@
 2018-10-11 15:16:29.136 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2018-10-11 15:16:29.137 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2018-10-11 15:16:29.138 +08:00 [DBG] Start key discovery request
+2018-10-18 18:25:16.889 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-10-18 18:25:16.966 +08:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-10-18 18:25:16.971 +08:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-10-18 18:25:16.972 +08:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-10-18 18:25:16.972 +08:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-10-18 18:25:16.972 +08:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-10-18 18:25:32.146 +08:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-10-18 18:25:43.314 +08:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-10-18 18:25:44.677 +08:00 [DBG] Augmenting SignInContext
+2018-10-18 18:25:44.689 +08:00 [DBG] Adding idp claim with value: local
+2018-10-18 18:25:44.690 +08:00 [DBG] Adding amr claim with value: pwd
+2018-10-18 18:25:44.692 +08:00 [DBG] Adding auth_time claim with value: 1539858344
+2018-10-18 18:25:44.722 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-10-18 18:25:44.840 +08:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "2f4ddbd1-34d2-4cab-8072-6c1c66a7a99b",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLHKSFVTM48T:00000001",
+  "TimeStamp": "2018-10-18T10:25:44Z",
+  "ProcessId": 11328,
+  "LocalIpAddress": "::1:5001",
+  "RemoteIpAddress": "::1"
+}

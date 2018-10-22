@@ -1,3 +1,9 @@
-<p>
-  post-list works!
-</p>
+<div *ngIf="!pageMeta">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="pageMeta">
+  <ng-container *ngFor="let post of posts">
+    
+    {{post.title}}<br>
+  </ng-container>
+</div>
