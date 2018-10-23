@@ -11,6 +11,8 @@ import { PostService } from './services/post.service';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { AuthorizationHeaderInterceptor } from '../shared/oidc/authorization-header-interceptor.interceptor';
 import { PostCardComponent } from './components/post-card/post-card.component';
+import { WritePostComponent } from './components/write-post/write-post.component';
+import { TinymceService } from './services/tinymce.service';
 
 @NgModule({
   imports: [
@@ -24,10 +26,12 @@ import { PostCardComponent } from './components/post-card/post-card.component';
     SidenavComponent,
     ToolbarComponent,
     PostListComponent,
-    PostCardComponent
+    PostCardComponent,
+    WritePostComponent
   ],
   providers: [
     PostService,
+    TinymceService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthorizationHeaderInterceptor,

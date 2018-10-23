@@ -1,0 +1,364 @@
+2018-10-23 16:33:47.379 +08:00 [INF] Hello, world!
+2018-10-23 16:33:53.661 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 16:33:54.032 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-23 16:33:54.130 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-23 16:33:54.812 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-10-23 16:33:56.157 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-23 16:33:56.318 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 16:33:56.709 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-23 16:33:56.777 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-23 16:33:56.791 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.6904ms.
+2018-10-23 16:33:56.828 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2018-10-23 16:33:56.881 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 150.2392ms
+2018-10-23 16:33:56.893 +08:00 [INF] Request finished in 737.6091ms 200 text/plain; charset=utf-8
+2018-10-23 16:33:57.387 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/favicon.ico  
+2018-10-23 16:33:57.389 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 16:33:57.395 +08:00 [INF] Request finished in 7.8862ms 404 
+2018-10-23 16:38:24.353 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 16:38:25.199 +08:00 [INF] Successfully validated the token.
+2018-10-23 16:38:25.214 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 16:38:25.309 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 16:38:25.325 +08:00 [INF] Authorization was successful.
+2018-10-23 16:38:25.327 +08:00 [INF] Authorization was successful.
+2018-10-23 16:38:25.412 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 16:38:25.451 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 16:38:25.731 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 16:38:25.847 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 16:38:26.051 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 625.3642ms.
+2018-10-23 16:38:26.067 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 16:38:26.103 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 791.7222ms
+2018-10-23 16:38:26.113 +08:00 [INF] Request finished in 1762.3176ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 16:47:05.928 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 16:47:05.957 +08:00 [INF] Successfully validated the token.
+2018-10-23 16:47:05.960 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 16:47:05.965 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 16:47:05.971 +08:00 [INF] Authorization was successful.
+2018-10-23 16:47:05.973 +08:00 [INF] Authorization was successful.
+2018-10-23 16:47:06.061 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 16:47:06.174 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 16:47:06.292 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 16:47:06.301 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 16:47:06.318 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 151.7149ms.
+2018-10-23 16:47:06.323 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 16:47:06.330 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 359.60450000000003ms
+2018-10-23 16:47:06.333 +08:00 [INF] Request finished in 408.4103ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 16:49:00.797 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 16:49:00.802 +08:00 [INF] Successfully validated the token.
+2018-10-23 16:49:00.803 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 16:49:00.808 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 16:49:00.815 +08:00 [INF] Authorization was successful.
+2018-10-23 16:49:00.817 +08:00 [INF] Authorization was successful.
+2018-10-23 16:49:00.821 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 16:49:00.836 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 16:49:00.862 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 16:49:00.882 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 16:49:00.890 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 63.177800000000005ms.
+2018-10-23 16:49:00.904 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 16:49:00.933 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 117.4957ms
+2018-10-23 16:49:00.936 +08:00 [INF] Request finished in 138.1971ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 16:59:48.121 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 16:59:48.139 +08:00 [INF] Successfully validated the token.
+2018-10-23 16:59:48.142 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 16:59:48.155 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 16:59:48.163 +08:00 [INF] Authorization was successful.
+2018-10-23 16:59:48.165 +08:00 [INF] Authorization was successful.
+2018-10-23 16:59:48.179 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 16:59:48.198 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 16:59:48.250 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 16:59:48.258 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 16:59:48.270 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 84.3313ms.
+2018-10-23 16:59:48.274 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 16:59:48.288 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 130.1625ms
+2018-10-23 16:59:48.291 +08:00 [INF] Request finished in 173.6424ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:01:36.546 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:01:36.550 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:01:36.552 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:01:36.554 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:01:36.556 +08:00 [INF] Authorization was successful.
+2018-10-23 17:01:36.557 +08:00 [INF] Authorization was successful.
+2018-10-23 17:01:36.560 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:01:36.563 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:01:36.571 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:01:36.580 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:01:36.587 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 24.4327ms.
+2018-10-23 17:01:36.590 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:01:36.595 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 38.9829ms
+2018-10-23 17:01:36.598 +08:00 [INF] Request finished in 52.3244ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:03:30.754 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:03:30.759 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:03:30.760 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:03:30.762 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:03:30.765 +08:00 [INF] Authorization was successful.
+2018-10-23 17:03:30.767 +08:00 [INF] Authorization was successful.
+2018-10-23 17:03:30.770 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:03:30.776 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:03:30.783 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:03:30.789 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:03:30.795 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 20.6034ms.
+2018-10-23 17:03:30.798 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:03:30.806 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 41.233000000000004ms
+2018-10-23 17:03:30.810 +08:00 [INF] Request finished in 56.1541ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:08:25.875 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:08:25.879 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:08:25.880 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:08:25.882 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:08:25.884 +08:00 [INF] Authorization was successful.
+2018-10-23 17:08:25.886 +08:00 [INF] Authorization was successful.
+2018-10-23 17:08:25.888 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:08:25.892 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:08:25.913 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:08:25.920 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:08:25.927 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 35.755ms.
+2018-10-23 17:08:25.930 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:08:25.934 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 50.1345ms
+2018-10-23 17:08:25.937 +08:00 [INF] Request finished in 61.7455ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:09:30.575 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:09:30.580 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:09:30.581 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:09:30.582 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:09:30.584 +08:00 [INF] Authorization was successful.
+2018-10-23 17:09:30.587 +08:00 [INF] Authorization was successful.
+2018-10-23 17:09:30.589 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:09:30.594 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:09:30.607 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:09:30.619 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:09:30.624 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 31.785700000000002ms.
+2018-10-23 17:09:30.627 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:09:30.632 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 47.478500000000004ms
+2018-10-23 17:09:30.640 +08:00 [INF] Request finished in 65.0462ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:11:19.573 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:11:19.576 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:11:19.578 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:11:19.580 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:11:19.582 +08:00 [INF] Authorization was successful.
+2018-10-23 17:11:19.584 +08:00 [INF] Authorization was successful.
+2018-10-23 17:11:19.589 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:11:19.603 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:11:19.613 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:11:19.620 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:11:19.625 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.396800000000002ms.
+2018-10-23 17:11:19.627 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:11:19.632 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 50.5324ms
+2018-10-23 17:11:19.635 +08:00 [INF] Request finished in 61.4549ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:12:50.437 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:12:50.441 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:12:50.443 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:12:50.445 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:12:50.447 +08:00 [INF] Authorization was successful.
+2018-10-23 17:12:50.449 +08:00 [INF] Authorization was successful.
+2018-10-23 17:12:50.451 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:12:50.454 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:12:50.462 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:12:50.472 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:12:50.478 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 24.9604ms.
+2018-10-23 17:12:50.481 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:12:50.485 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 37.9388ms
+2018-10-23 17:12:50.487 +08:00 [INF] Request finished in 49.6959ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:14:35.180 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:14:35.182 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:14:35.185 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:14:35.191 +08:00 [INF] Authorization failed.
+2018-10-23 17:14:35.222 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:14:35.282 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:14:35.347 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:14:35.354 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:14:35.356 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 168.72840000000002ms
+2018-10-23 17:14:35.359 +08:00 [INF] Request finished in 178.5577ms 401 
+2018-10-23 17:15:53.532 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:15:53.537 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:15:53.539 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:15:53.541 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:15:53.544 +08:00 [INF] Authorization was successful.
+2018-10-23 17:15:53.546 +08:00 [INF] Authorization was successful.
+2018-10-23 17:15:53.549 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:15:53.556 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:15:53.613 +08:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:15:53.660 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:15:53.676 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 121.4458ms.
+2018-10-23 17:15:53.679 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:15:53.685 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 141.0201ms
+2018-10-23 17:15:53.692 +08:00 [INF] Request finished in 160.7913ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:16:45.702 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:16:45.708 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:16:45.712 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:16:45.718 +08:00 [INF] Authorization failed.
+2018-10-23 17:16:45.720 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:16:45.729 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:16:45.732 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:16:45.734 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:16:45.736 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 17.4109ms
+2018-10-23 17:16:45.742 +08:00 [INF] Request finished in 40.5855ms 401 
+2018-10-23 17:17:04.513 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:17:04.537 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:17:04.621 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:17:04.653 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:17:04.659 +08:00 [INF] Authorization was successful.
+2018-10-23 17:17:04.663 +08:00 [INF] Authorization was successful.
+2018-10-23 17:17:04.666 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:17:04.673 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:17:04.705 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:17:04.721 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:17:04.759 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 86.4834ms.
+2018-10-23 17:17:04.763 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:17:04.773 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 114.02510000000001ms
+2018-10-23 17:17:04.777 +08:00 [INF] Request finished in 264.1403ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:17:45.957 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:17:46.105 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:17:46.136 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:17:46.182 +08:00 [INF] Authorization failed.
+2018-10-23 17:17:46.185 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:17:46.187 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:17:46.194 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:17:46.197 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:17:46.199 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 17.097ms
+2018-10-23 17:17:46.204 +08:00 [INF] Request finished in 246.6761ms 401 
+2018-10-23 17:18:34.695 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:18:34.954 +08:00 [INF] Successfully validated the token.
+2018-10-23 17:18:34.999 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-23 17:18:35.040 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:18:35.044 +08:00 [INF] Authorization was successful.
+2018-10-23 17:18:35.046 +08:00 [INF] Authorization was successful.
+2018-10-23 17:18:35.069 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-23 17:18:35.131 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-23 17:18:35.151 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-23 17:18:35.164 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-23 17:18:35.169 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 38.8752ms.
+2018-10-23 17:18:35.172 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-23 17:18:35.187 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 142.9884ms
+2018-10-23 17:18:35.189 +08:00 [INF] Request finished in 494.1333ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-23 17:34:14.624 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:34:14.634 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:34:14.643 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:34:14.647 +08:00 [INF] Authorization failed.
+2018-10-23 17:34:14.655 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:34:14.658 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:34:14.666 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:34:14.671 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:34:14.673 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 27.314ms
+2018-10-23 17:34:14.676 +08:00 [INF] Request finished in 61.7376ms 401 
+2018-10-23 17:35:04.543 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:35:04.545 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:35:04.546 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:35:04.549 +08:00 [INF] Authorization failed.
+2018-10-23 17:35:04.551 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:35:04.555 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:35:04.557 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:35:04.558 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:35:04.560 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 11.759400000000001ms
+2018-10-23 17:35:04.565 +08:00 [INF] Request finished in 23.1908ms 401 
+2018-10-23 17:35:16.665 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:35:16.668 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:35:16.670 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:35:16.672 +08:00 [INF] Authorization failed.
+2018-10-23 17:35:16.673 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:35:16.675 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:35:16.677 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:35:16.678 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:35:16.684 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 12.136800000000001ms
+2018-10-23 17:35:16.693 +08:00 [INF] Request finished in 26.2102ms 401 
+2018-10-23 17:36:18.398 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-23 17:36:18.400 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-23 17:36:18.402 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-23 17:36:18.405 +08:00 [INF] Authorization failed.
+2018-10-23 17:36:18.407 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-23 17:36:18.409 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-23 17:36:18.414 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-23 17:36:18.416 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-23 17:36:18.418 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 13.7543ms
+2018-10-23 17:36:18.425 +08:00 [INF] Request finished in 26.6767ms 401 

@@ -717,3 +717,360 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
 2018-10-22 15:43:36.852 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
 2018-10-22 15:43:36.867 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 110.51870000000001ms
 2018-10-22 15:43:36.875 +08:00 [INF] Request finished in 133.0862ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-22 15:44:47.955 +08:00 [INF] Hello, world!
+2018-10-22 15:44:53.135 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-22 15:44:53.754 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-22 15:44:53.924 +08:00 [INF] User profile is available. Using 'C:\Users\dzliuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-22 15:44:54.791 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-10-22 15:44:56.160 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-22 15:44:56.743 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:44:57.237 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-22 15:44:57.352 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-22 15:44:57.410 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.3313000000000006ms.
+2018-10-22 15:44:57.553 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2018-10-22 15:44:57.607 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 348.67740000000003ms
+2018-10-22 15:44:57.723 +08:00 [INF] Request finished in 1564.7173ms 200 text/plain; charset=utf-8
+2018-10-22 15:45:29.959 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:45:29.966 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:45:30.042 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:45:30.073 +08:00 [INF] Authorization failed.
+2018-10-22 15:45:30.092 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:45:30.107 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:45:30.662 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:45:30.668 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:45:30.676 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 628.7731ms
+2018-10-22 15:45:30.725 +08:00 [INF] Request finished in 766.1016ms 401 
+2018-10-22 15:47:20.186 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:47:20.420 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:47:20.972 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:47:20.994 +08:00 [INF] Authorization failed.
+2018-10-22 15:47:21.002 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:47:21.014 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:47:21.055 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:47:21.093 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:47:21.096 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 113.68690000000001ms
+2018-10-22 15:47:21.105 +08:00 [INF] Request finished in 925.9776ms 401 
+2018-10-22 15:47:33.102 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:47:33.106 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:47:33.108 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:47:33.118 +08:00 [INF] Authorization failed.
+2018-10-22 15:47:33.128 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:47:33.141 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:47:33.148 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:47:33.153 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:47:33.156 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 39.633700000000005ms
+2018-10-22 15:47:33.164 +08:00 [INF] Request finished in 61.0905ms 401 
+2018-10-22 15:48:51.091 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:48:51.100 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:48:51.117 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:48:51.126 +08:00 [INF] Authorization failed.
+2018-10-22 15:48:51.128 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:48:51.146 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:48:51.180 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:48:51.205 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:48:51.241 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 115.6319ms
+2018-10-22 15:48:51.246 +08:00 [INF] Request finished in 155.8096ms 401 
+2018-10-22 15:49:00.501 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:49:00.508 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:49:00.517 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:49:00.526 +08:00 [INF] Authorization failed.
+2018-10-22 15:49:00.529 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:49:00.531 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:49:00.538 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:49:00.541 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:49:00.543 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 18.086000000000002ms
+2018-10-22 15:49:00.549 +08:00 [INF] Request finished in 48.7237ms 401 
+2018-10-22 15:49:30.757 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:49:30.763 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:49:30.768 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:49:30.776 +08:00 [INF] Authorization failed.
+2018-10-22 15:49:30.785 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:49:30.797 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:49:30.810 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:49:30.835 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:49:30.843 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 67.4423ms
+2018-10-22 15:49:30.849 +08:00 [INF] Request finished in 91.9451ms 401 
+2018-10-22 15:50:00.098 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:50:00.107 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:50:00.110 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:50:00.125 +08:00 [INF] Authorization failed.
+2018-10-22 15:50:00.127 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:50:00.130 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:50:00.140 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:50:00.167 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:50:00.169 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 44.292100000000005ms
+2018-10-22 15:50:00.186 +08:00 [INF] Request finished in 88.6005ms 401 
+2018-10-22 15:52:20.784 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:52:20.840 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:52:20.850 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:52:20.856 +08:00 [INF] Authorization failed.
+2018-10-22 15:52:20.862 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:52:20.871 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:52:20.878 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:52:20.881 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:52:20.886 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 30.6525ms
+2018-10-22 15:52:20.895 +08:00 [INF] Request finished in 111.295ms 401 
+2018-10-22 15:52:39.314 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:52:39.317 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:52:39.319 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:52:39.326 +08:00 [INF] Authorization failed.
+2018-10-22 15:52:39.330 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:52:39.333 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:52:39.337 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:52:39.340 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:52:39.343 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 17.1711ms
+2018-10-22 15:52:39.350 +08:00 [INF] Request finished in 35.9719ms 401 
+2018-10-22 15:52:56.006 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 15:52:56.012 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 15:52:56.015 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 15:52:56.024 +08:00 [INF] Authorization failed.
+2018-10-22 15:52:56.027 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 15:52:56.031 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 15:52:56.034 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 15:52:56.036 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 15:52:56.041 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 17.157600000000002ms
+2018-10-22 15:52:56.049 +08:00 [INF] Request finished in 41.4602ms 401 
+2018-10-22 16:03:11.521 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:03:13.187 +08:00 [INF] Successfully validated the token.
+2018-10-22 16:03:13.204 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-22 16:03:13.221 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:03:13.231 +08:00 [INF] Authorization was successful.
+2018-10-22 16:03:13.238 +08:00 [INF] Authorization was successful.
+2018-10-22 16:03:13.588 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-22 16:03:13.716 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-22 16:03:14.170 +08:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-22 16:03:14.311 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-22 16:03:14.605 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 995.4242ms.
+2018-10-22 16:03:14.636 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-22 16:03:14.721 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 1492.3908000000001ms
+2018-10-22 16:03:14.737 +08:00 [INF] Request finished in 3220.8414ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-22 16:03:40.620 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:03:40.647 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:03:40.653 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:03:40.721 +08:00 [INF] Authorization failed.
+2018-10-22 16:03:40.724 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 16:03:40.733 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 16:03:40.736 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 16:03:40.746 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 16:03:40.750 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 29.175500000000003ms
+2018-10-22 16:03:40.754 +08:00 [INF] Request finished in 133.9218ms 401 
+2018-10-22 16:03:58.464 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-22 16:03:58.476 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:03:58.481 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-22 16:03:58.487 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-22 16:03:58.499 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0345ms.
+2018-10-22 16:03:58.521 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2018-10-22 16:03:58.527 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 40.482400000000005ms
+2018-10-22 16:03:58.540 +08:00 [INF] Request finished in 76.1772ms 200 text/plain; charset=utf-8
+2018-10-22 16:04:00.993 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-22 16:04:00.995 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:04:01.001 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-22 16:04:01.016 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-22 16:04:01.020 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0065000000000000006ms.
+2018-10-22 16:04:01.032 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2018-10-22 16:04:01.034 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 18.492800000000003ms
+2018-10-22 16:04:01.039 +08:00 [INF] Request finished in 45.8876ms 200 text/plain; charset=utf-8
+2018-10-22 16:04:01.760 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/values  
+2018-10-22 16:04:01.764 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:04:01.768 +08:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api)
+2018-10-22 16:04:01.779 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-10-22 16:04:01.785 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.016300000000000002ms.
+2018-10-22 16:04:01.799 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2018-10-22 16:04:01.806 +08:00 [INF] Executed action BlogDemo.Api.Controllers.ValuesController.Get (BlogDemo.Api) in 27.617700000000003ms
+2018-10-22 16:04:01.816 +08:00 [INF] Request finished in 55.7342ms 200 text/plain; charset=utf-8
+2018-10-22 16:04:11.324 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:04:11.329 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:04:11.331 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:04:11.340 +08:00 [INF] Authorization failed.
+2018-10-22 16:04:11.342 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 16:04:11.344 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 16:04:11.350 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 16:04:11.353 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 16:04:11.355 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 15.609200000000001ms
+2018-10-22 16:04:11.369 +08:00 [INF] Request finished in 44.9494ms 401 
+2018-10-22 16:04:33.029 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:04:33.032 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 16:04:33.035 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:04:33.048 +08:00 [INF] Authorization failed.
+2018-10-22 16:04:33.052 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 16:04:33.057 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 16:04:33.070 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 16:04:33.076 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 16:04:33.103 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 54.2059ms
+2018-10-22 16:04:33.106 +08:00 [INF] Request finished in 77.1677ms 401 
+2018-10-22 16:54:08.030 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:08.221 +08:00 [INF] Request finished in 207.9955ms 307 
+2018-10-22 16:54:08.307 +08:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:6001/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:08.394 +08:00 [INF] Policy execution successful.
+2018-10-22 16:54:08.410 +08:00 [INF] Request finished in 103.5636ms 204 
+2018-10-22 16:54:08.431 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:08.437 +08:00 [INF] Policy execution successful.
+2018-10-22 16:54:08.494 +08:00 [INF] Successfully validated the token.
+2018-10-22 16:54:08.509 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-22 16:54:08.522 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:54:08.538 +08:00 [INF] Authorization was successful.
+2018-10-22 16:54:08.542 +08:00 [INF] Authorization was successful.
+2018-10-22 16:54:08.596 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-22 16:54:08.638 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-22 16:54:08.742 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-22 16:54:08.764 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-22 16:54:08.792 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 187.25390000000002ms.
+2018-10-22 16:54:08.797 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-22 16:54:08.819 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 287.7935ms
+2018-10-22 16:54:08.823 +08:00 [INF] Request finished in 391.2508ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-22 16:54:39.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:39.920 +08:00 [INF] Request finished in 206.1559ms 307 
+2018-10-22 16:54:39.942 +08:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:6001/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:39.959 +08:00 [INF] Policy execution successful.
+2018-10-22 16:54:39.969 +08:00 [INF] Request finished in 26.1636ms 204 
+2018-10-22 16:54:39.981 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 16:54:40.006 +08:00 [INF] Policy execution successful.
+2018-10-22 16:54:40.012 +08:00 [INF] Successfully validated the token.
+2018-10-22 16:54:40.013 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-22 16:54:40.016 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 16:54:40.030 +08:00 [INF] Authorization was successful.
+2018-10-22 16:54:40.037 +08:00 [INF] Authorization was successful.
+2018-10-22 16:54:40.043 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-22 16:54:40.056 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-22 16:54:40.093 +08:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-22 16:54:40.202 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-22 16:54:40.245 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 190.1329ms.
+2018-10-22 16:54:40.254 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-22 16:54:40.273 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 243.25320000000002ms
+2018-10-22 16:54:40.279 +08:00 [INF] Request finished in 296.9982ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-22 17:00:35.587 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:00:35.654 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:00:35.675 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:00:35.705 +08:00 [INF] Authorization failed.
+2018-10-22 17:00:35.715 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:00:35.719 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:00:35.725 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:00:35.734 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:00:35.738 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 37.6556ms
+2018-10-22 17:00:35.745 +08:00 [INF] Request finished in 177.8603ms 401 
+2018-10-22 17:02:53.907 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:02:53.922 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:02:53.942 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:02:53.957 +08:00 [INF] Authorization failed.
+2018-10-22 17:02:53.977 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:02:53.992 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:02:54.111 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:02:54.145 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:02:54.172 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 218.262ms
+2018-10-22 17:02:54.176 +08:00 [INF] Request finished in 271.4038ms 401 
+2018-10-22 17:07:00.145 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:07:01.060 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:07:01.095 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:07:01.218 +08:00 [INF] Authorization failed.
+2018-10-22 17:07:01.281 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:07:01.302 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:07:01.313 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:07:01.337 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:07:01.386 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 168.4848ms
+2018-10-22 17:07:01.437 +08:00 [INF] Request finished in 1292.8428ms 401 
+2018-10-22 17:07:18.416 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:07:18.420 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:07:18.424 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:07:18.452 +08:00 [INF] Authorization failed.
+2018-10-22 17:07:18.461 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:07:18.471 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:07:18.474 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:07:18.482 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:07:18.511 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 59.5855ms
+2018-10-22 17:07:18.518 +08:00 [INF] Request finished in 102.227ms 401 
+2018-10-22 17:07:29.677 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:07:31.104 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:07:31.766 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:07:31.987 +08:00 [INF] Authorization failed.
+2018-10-22 17:07:31.995 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:07:31.999 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:07:32.002 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:07:32.010 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:07:32.016 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 30.7514ms
+2018-10-22 17:07:32.024 +08:00 [INF] Request finished in 2347.1248ms 401 
+2018-10-22 17:09:31.304 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:09:31.358 +08:00 [INF] Successfully validated the token.
+2018-10-22 17:09:31.366 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-22 17:09:31.371 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:09:31.385 +08:00 [INF] Authorization was successful.
+2018-10-22 17:09:31.393 +08:00 [INF] Authorization was successful.
+2018-10-22 17:09:31.485 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-22 17:09:31.561 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-22 17:09:31.968 +08:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-22 17:09:32.028 +08:00 [INF] Executed DbCommand (35ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-22 17:09:32.187 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 670.89820000000009ms.
+2018-10-22 17:09:32.194 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-22 17:09:32.224 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 841.5525ms
+2018-10-22 17:09:32.229 +08:00 [INF] Request finished in 927.7504ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-22 17:09:52.257 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:09:52.287 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:09:52.320 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:09:52.340 +08:00 [INF] Authorization failed.
+2018-10-22 17:09:52.345 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:09:52.362 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:09:52.371 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:09:52.384 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:09:52.390 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 49.736000000000004ms
+2018-10-22 17:09:52.400 +08:00 [INF] Request finished in 147.7685ms 401 
+2018-10-22 17:10:10.282 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:10:10.288 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:10:10.292 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:10:10.300 +08:00 [INF] Authorization failed.
+2018-10-22 17:10:10.304 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:10:10.307 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:10:10.310 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:10:10.314 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:10:10.322 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 23.3821ms
+2018-10-22 17:10:10.333 +08:00 [INF] Request finished in 50.7046ms 401 
+2018-10-22 17:15:03.111 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-22 17:15:03.120 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-22 17:15:03.125 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-22 17:15:03.131 +08:00 [INF] Authorization failed.
+2018-10-22 17:15:03.141 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-10-22 17:15:03.146 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-10-22 17:15:03.150 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-10-22 17:15:03.161 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-10-22 17:15:03.166 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 35.917300000000004ms
+2018-10-22 17:15:03.174 +08:00 [INF] Request finished in 64.3637ms 401 

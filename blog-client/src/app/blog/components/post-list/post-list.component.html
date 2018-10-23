@@ -5,6 +5,9 @@
   <!-- <button mat-fab color="warn" class="add-fab" [routerLink]="'/blog/write-post'" *ngIf='openIdConnectService.userAvailable'>
     <mat-icon aria-label="Add Post" svgIcon="baseline-add"></mat-icon>
   </button> -->
+  <button mat-fab color="warn" class="add-fab" [routerLink]="'/blog/write-post'" *ngIf='openIdConnectService.userAvailable'>
+    <mat-icon aria-label="Add Post" svgIcon="baseline-add"></mat-icon>
+  </button>
   <ng-container *ngFor="let item of posts">
     <app-post-card [post]="item"></app-post-card>
   </ng-container>
