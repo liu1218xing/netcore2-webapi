@@ -12,3 +12,17 @@ G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Infrastructure\obj\Debug\netcore
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.pdb
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.json
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.dev.json
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.deps.json
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.json
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.dev.json
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.dll
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.pdb
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Core.dll
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csprojAssemblyReference.cache
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csproj.CoreCompileInputs.cache
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.AssemblyInfoInputs.cache
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.AssemblyInfo.cs
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csproj.CopyComplete
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.dll
+G:\git\netcore2-webapi\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.pdb

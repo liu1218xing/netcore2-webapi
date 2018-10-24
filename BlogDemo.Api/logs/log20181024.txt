@@ -1,0 +1,301 @@
+2018-10-24 22:14:17.230 +08:00 [INF] Hello, world!
+2018-10-24 22:14:27.055 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:14:29.805 +08:00 [INF] Executed DbCommand (473ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-24 22:14:31.505 +08:00 [INF] User profile is available. Using 'C:\Users\liuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-24 22:17:32.192 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:17:32.324 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:17:32.589 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:17:32.774 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:17:32.988 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:17:33.745 +08:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:17:33.936 +08:00 [INF] Executed DbCommand (69ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:17:34.679 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1738.1243000000002ms.
+2018-10-24 22:17:34.729 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:17:34.817 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 2196.5359000000003ms
+2018-10-24 22:17:34.962 +08:00 [INF] Request finished in 2771.3257ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:18:45.036 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:18:46.006 +08:00 [INF] Successfully validated the token.
+2018-10-24 22:18:46.019 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-24 22:18:46.024 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:18:46.032 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:18:46.043 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:18:46.052 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:18:46.065 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:18:46.078 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 37.286300000000004ms.
+2018-10-24 22:18:46.083 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:18:46.096 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 66.496000000000009ms
+2018-10-24 22:18:46.100 +08:00 [INF] Request finished in 1063.9981ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:19:18.801 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundarywcH1jyLCCmnTeLWY 131418
+2018-10-24 22:19:19.017 +08:00 [INF] Policy execution successful.
+2018-10-24 22:19:19.022 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:19:19.034 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:19:19.140 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:19:19.429 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:19:23.210 +08:00 [INF] Hello, world!
+2018-10-24 22:19:26.433 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:19:27.069 +08:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Posts] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-10-24 22:19:27.184 +08:00 [INF] User profile is available. Using 'C:\Users\liuxing\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-10-24 22:20:06.944 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:20:07.529 +08:00 [INF] Successfully validated the token.
+2018-10-24 22:20:07.540 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-24 22:20:07.718 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:20:07.813 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:20:07.852 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:20:08.110 +08:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:20:08.193 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:20:08.409 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 578.7036ms.
+2018-10-24 22:20:08.442 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:20:08.496 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 771.1589ms
+2018-10-24 22:20:08.521 +08:00 [INF] Request finished in 1578.1151ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:20:37.786 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundarycoTU35BElX9K1v7O 131418
+2018-10-24 22:20:37.790 +08:00 [INF] Policy execution successful.
+2018-10-24 22:20:37.792 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:20:37.806 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:20:37.886 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:20:37.944 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:20:38.097 +08:00 [INF] Executed DbCommand (49ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:20:38.182 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 292.1091ms.
+2018-10-24 22:20:38.188 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:20:38.193 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 383.5699ms
+2018-10-24 22:20:38.199 +08:00 [INF] Request finished in 413.0515ms 200 application/json; charset=utf-8
+2018-10-24 22:20:38.561 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/59eac16d-b6e4-49b3-8066-5f20215a6901.jpg  
+2018-10-24 22:20:38.645 +08:00 [INF] Sending file. Request path: '/uploads/59eac16d-b6e4-49b3-8066-5f20215a6901.jpg'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\59eac16d-b6e4-49b3-8066-5f20215a6901.jpg'
+2018-10-24 22:20:38.649 +08:00 [INF] Request finished in 87.8052ms 200 image/jpeg
+2018-10-24 22:21:27.894 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryxYQ2IWw3SRHBsANL 2743286
+2018-10-24 22:21:27.898 +08:00 [INF] Policy execution successful.
+2018-10-24 22:21:27.900 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:21:27.903 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:21:27.973 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:21:28.016 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:21:28.024 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:21:28.044 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 68.3884ms.
+2018-10-24 22:21:28.051 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:21:28.054 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 143.3579ms
+2018-10-24 22:21:28.057 +08:00 [INF] Request finished in 162.8094ms 200 application/json; charset=utf-8
+2018-10-24 22:21:28.402 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/d9ea1ee1-ee1a-4479-82f3-0a730933ebde.png  
+2018-10-24 22:21:28.675 +08:00 [INF] Sending file. Request path: '/uploads/d9ea1ee1-ee1a-4479-82f3-0a730933ebde.png'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\d9ea1ee1-ee1a-4479-82f3-0a730933ebde.png'
+2018-10-24 22:21:28.686 +08:00 [INF] Request finished in 283.6313ms 200 image/png
+2018-10-24 22:21:32.600 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/d9ea1ee1-ee1a-4479-82f3-0a730933ebde.png  
+2018-10-24 22:21:32.607 +08:00 [INF] The file /uploads/d9ea1ee1-ee1a-4479-82f3-0a730933ebde.png was not modified
+2018-10-24 22:21:32.615 +08:00 [INF] Request finished in 14.456ms 304 image/png
+2018-10-24 22:21:48.542 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryHmIRCHZ6scfCs4dS 131418
+2018-10-24 22:21:48.580 +08:00 [INF] Policy execution successful.
+2018-10-24 22:21:48.583 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:21:48.585 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:21:48.594 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:21:48.605 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:21:48.752 +08:00 [INF] Executed DbCommand (134ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:21:48.801 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 201.92870000000002ms.
+2018-10-24 22:21:48.804 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:21:48.807 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 219.08530000000002ms
+2018-10-24 22:21:48.811 +08:00 [INF] Request finished in 270.7503ms 200 application/json; charset=utf-8
+2018-10-24 22:21:49.149 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/93d662ba-19fb-4a28-9e24-7f4e281c5118.jpg  
+2018-10-24 22:21:49.173 +08:00 [INF] Sending file. Request path: '/uploads/93d662ba-19fb-4a28-9e24-7f4e281c5118.jpg'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\93d662ba-19fb-4a28-9e24-7f4e281c5118.jpg'
+2018-10-24 22:21:49.178 +08:00 [INF] Request finished in 28.7379ms 200 image/jpeg
+2018-10-24 22:21:50.383 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/93d662ba-19fb-4a28-9e24-7f4e281c5118.jpg  
+2018-10-24 22:21:50.389 +08:00 [INF] The file /uploads/93d662ba-19fb-4a28-9e24-7f4e281c5118.jpg was not modified
+2018-10-24 22:21:50.393 +08:00 [INF] Request finished in 9.7432ms 304 image/jpeg
+2018-10-24 22:22:08.167 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:22:08.199 +08:00 [INF] Successfully validated the token.
+2018-10-24 22:22:08.205 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-24 22:22:08.208 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:22:08.240 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:22:08.256 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:22:08.272 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:22:08.284 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:22:08.293 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 40.0156ms.
+2018-10-24 22:22:08.304 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:22:08.315 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 85.672ms
+2018-10-24 22:22:08.318 +08:00 [INF] Request finished in 151.1216ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:22:11.418 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryynYmef3zAvVLRScJ 542102
+2018-10-24 22:22:11.423 +08:00 [INF] Policy execution successful.
+2018-10-24 22:22:11.425 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:22:11.428 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:22:11.444 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:22:11.470 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:22:11.485 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:22:11.497 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 44.7763ms.
+2018-10-24 22:22:11.502 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:22:11.505 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 72.1586ms
+2018-10-24 22:22:11.516 +08:00 [INF] Request finished in 97.897ms 200 application/json; charset=utf-8
+2018-10-24 22:22:26.012 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryv6z0jboLs8TPyAQj 542102
+2018-10-24 22:22:26.017 +08:00 [INF] Policy execution successful.
+2018-10-24 22:22:26.019 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:22:26.021 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:22:26.068 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:22:26.100 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:22:26.104 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:22:26.116 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 44.287ms.
+2018-10-24 22:22:26.119 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:22:26.120 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 94.019ms
+2018-10-24 22:22:26.129 +08:00 [INF] Request finished in 118.3021ms 200 application/json; charset=utf-8
+2018-10-24 22:22:26.533 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/ed9e67c8-b886-481f-9f9d-9b9778f4239c.jpg  
+2018-10-24 22:22:26.600 +08:00 [INF] Sending file. Request path: '/uploads/ed9e67c8-b886-481f-9f9d-9b9778f4239c.jpg'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\ed9e67c8-b886-481f-9f9d-9b9778f4239c.jpg'
+2018-10-24 22:22:26.621 +08:00 [INF] Request finished in 87.4801ms 200 image/jpeg
+2018-10-24 22:22:33.074 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryGPSnGMCCWr5Zhs12 131418
+2018-10-24 22:22:33.077 +08:00 [INF] Policy execution successful.
+2018-10-24 22:22:33.079 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:22:33.082 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:22:33.091 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:22:33.120 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:22:33.126 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:22:33.134 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 36.829100000000004ms.
+2018-10-24 22:22:33.137 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:22:33.146 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 58.7991ms
+2018-10-24 22:22:33.149 +08:00 [INF] Request finished in 74.9871ms 200 application/json; charset=utf-8
+2018-10-24 22:22:33.486 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/af10b692-dc93-4ff6-9ae8-f67ca2b41adf.jpg  
+2018-10-24 22:22:33.675 +08:00 [INF] Sending file. Request path: '/uploads/af10b692-dc93-4ff6-9ae8-f67ca2b41adf.jpg'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\af10b692-dc93-4ff6-9ae8-f67ca2b41adf.jpg'
+2018-10-24 22:22:33.685 +08:00 [INF] Request finished in 199.329ms 200 image/jpeg
+2018-10-24 22:22:39.858 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/af10b692-dc93-4ff6-9ae8-f67ca2b41adf.jpg  
+2018-10-24 22:22:39.874 +08:00 [INF] The file /uploads/af10b692-dc93-4ff6-9ae8-f67ca2b41adf.jpg was not modified
+2018-10-24 22:22:39.880 +08:00 [INF] Request finished in 22.7734ms 304 image/jpeg
+2018-10-24 22:22:58.822 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryi5PO8NQw0IYA1Ywu 131418
+2018-10-24 22:22:58.829 +08:00 [INF] Policy execution successful.
+2018-10-24 22:22:58.830 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:22:58.832 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api)
+2018-10-24 22:22:58.841 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: "Valid"
+2018-10-24 22:22:58.881 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:22:58.888 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([FileName])
+VALUES (@p0);
+SELECT [Id]
+FROM [PostImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:22:58.897 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 50.2605ms.
+2018-10-24 22:22:58.902 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Infrastructure.Resources.PostImageResource'.
+2018-10-24 22:22:58.906 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostImageController.Upload (BlogDemo.Api) in 69.1551ms
+2018-10-24 22:22:58.909 +08:00 [INF] Request finished in 86.9246ms 200 application/json; charset=utf-8
+2018-10-24 22:22:59.238 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/4d25f0e2-881d-4e68-ba0c-e9d2e84bd16b.jpg  
+2018-10-24 22:22:59.254 +08:00 [INF] Sending file. Request path: '/uploads/4d25f0e2-881d-4e68-ba0c-e9d2e84bd16b.jpg'. Physical path: 'G:\git\netcore2-webapi\BlogDemo.Api\wwwroot\uploads\4d25f0e2-881d-4e68-ba0c-e9d2e84bd16b.jpg'
+2018-10-24 22:22:59.268 +08:00 [INF] Request finished in 29.5004ms 200 image/jpeg
+2018-10-24 22:23:06.409 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/4d25f0e2-881d-4e68-ba0c-e9d2e84bd16b.jpg  
+2018-10-24 22:23:06.411 +08:00 [INF] The file /uploads/4d25f0e2-881d-4e68-ba0c-e9d2e84bd16b.jpg was not modified
+2018-10-24 22:23:06.413 +08:00 [INF] Request finished in 3.7312ms 304 image/jpeg
+2018-10-24 22:23:15.819 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/posts application/vnd.cgzl.post.create+json 164
+2018-10-24 22:23:15.820 +08:00 [INF] Policy execution successful.
+2018-10-24 22:23:15.824 +08:00 [INF] Successfully validated the token.
+2018-10-24 22:23:15.825 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-24 22:23:15.844 +08:00 [INF] Route matched with {action = "Post", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Post (BlogDemo.Api)
+2018-10-24 22:23:15.862 +08:00 [INF] Authorization was successful.
+2018-10-24 22:23:15.864 +08:00 [INF] Authorization was successful.
+2018-10-24 22:23:16.008 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Post (BlogDemo.Api) with arguments (["BlogDemo.Infrastructure.Resources.PostAddResource"]) - Validation state: "Valid"
+2018-10-24 22:23:16.023 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:23:16.100 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Posts] ([Author], [Body], [LastModified], [Remark], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Posts]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2018-10-24 22:23:16.117 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Post (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 105.2201ms.
+2018-10-24 22:23:16.121 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2018-10-24 22:23:16.127 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Post (BlogDemo.Api) in 280.281ms
+2018-10-24 22:23:16.130 +08:00 [INF] Request finished in 311.5272ms 201 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:23:16.474 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:23:16.478 +08:00 [INF] Successfully validated the token.
+2018-10-24 22:23:16.480 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-10-24 22:23:16.483 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:23:16.488 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:23:16.492 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:23:16.501 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:23:16.511 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:23:16.519 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 28.0438ms.
+2018-10-24 22:23:16.522 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:23:16.532 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 44.8147ms
+2018-10-24 22:23:16.534 +08:00 [INF] Request finished in 59.7664ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8
+2018-10-24 22:40:50.292 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=id%20desc&pageSize=10&pageIndex=0  
+2018-10-24 22:40:52.018 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-10-24 22:40:52.176 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2018-10-24 22:40:53.031 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-10-24 22:40:53.198 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-24 22:40:55.163 +08:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-10-24 22:40:55.198 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-10-24 22:40:55.393 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2291.8409ms.
+2018-10-24 22:40:55.397 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-10-24 22:40:55.511 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 3330.3649ms
+2018-10-24 22:40:55.837 +08:00 [INF] Request finished in 6171.9124ms 200 application/vnd.cgzl.hateoas+json; charset=utf-8

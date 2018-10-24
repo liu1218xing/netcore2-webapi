@@ -13,13 +13,22 @@ import { AuthorizationHeaderInterceptor } from '../shared/oidc/authorization-hea
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { WritePostComponent } from './components/write-post/write-post.component';
 import { TinymceService } from './services/tinymce.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { PostTableComponent } from './components/post-table/post-table.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     BlogRoutingModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    EditorModule
   ],
   declarations: [
     BlogAppComponent,
@@ -27,7 +36,10 @@ import { TinymceService } from './services/tinymce.service';
     ToolbarComponent,
     PostListComponent,
     PostCardComponent,
-    WritePostComponent
+    WritePostComponent,
+    PostDetailComponent,
+    EditPostComponent,
+    PostTableComponent
   ],
   providers: [
     PostService,

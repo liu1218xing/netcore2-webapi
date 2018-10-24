@@ -27,6 +27,7 @@ using FluentValidation.AspNetCore;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace BlogDemo.Api
 {
@@ -84,6 +85,7 @@ namespace BlogDemo.Api
                     options.ApiName = "restapi";
                 });
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<IPostImageRepository, PostImageRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
@@ -95,6 +97,9 @@ namespace BlogDemo.Api
             services.AddAutoMapper();
             services.AddTransient<IValidator<PostAddResource>, PostAddOrUpdateResourceValidator<PostAddResource>>();
             services.AddTransient<IValidator<PostUpdateResource>, PostAddOrUpdateResourceValidator<PostUpdateResource>>();
+            services.AddTransient<IValidator<PostImageResource>, PostImageResourceValidator>();
+
+
             var propertyMappingContainer = new PropertyMappingContainer();
             propertyMappingContainer.Register<PostPropertyMapping>();
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
@@ -109,7 +114,15 @@ namespace BlogDemo.Api
                         .AllowAnyHeader()
                         .AllowAnyMethod());
             });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAngularDevOrigin"));
 
+            //    var policy = new AuthorizationPolicyBuilder()
+            //        .RequireAuthenticatedUser()
+            //        .Build();
+            //    options.Filters.Add(new AuthorizeFilter(policy));
+            //});
             services.Configure<MvcOptions>(options =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -127,7 +140,7 @@ namespace BlogDemo.Api
             //app.UseDeveloperExceptionPage();
             app.UseCors("AllowAngularDevOrigin");
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseAuthentication();
             if (env.IsProduction())
             {

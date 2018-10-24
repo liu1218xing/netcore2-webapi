@@ -5,6 +5,13 @@ const PROXY_CONFIG = [
         ],
         target: "https://localhost:6001",
         secure: false
+    },
+    {
+        context: [
+            "/uploads"
+        ],
+        target: "https://localhost:6001",
+        secure: false
     }
 ];
 

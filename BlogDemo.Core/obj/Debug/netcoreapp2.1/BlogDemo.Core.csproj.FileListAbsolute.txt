@@ -7,3 +7,12 @@ G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\Blo
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfo.cs
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.dll
 G:\study\git\aspnetcore-study\BlogDemo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+G:\git\netcore2-webapi\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.deps.json
+G:\git\netcore2-webapi\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.dll
+G:\git\netcore2-webapi\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csprojAssemblyReference.cache
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csproj.CoreCompileInputs.cache
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfoInputs.cache
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfo.cs
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.dll
+G:\git\netcore2-webapi\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.pdb
